@@ -4,7 +4,7 @@ metadata:
   name: bb-demo
   namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       bb: web
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bb-site
-        image: getting-started
+        image: Dockerfile
         imagePullPolicy: Never
 ---
 apiVersion: v1
