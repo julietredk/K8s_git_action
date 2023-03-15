@@ -22,13 +22,8 @@ jobs:
     - name: Deploy to minikube
       run:
         kubectl apply -f deployment.yaml
-    - name: Test service URLs
-#      run: |
-#        minikube service list
-#        minikube service bb-entrypoint --url
-#        echo "------------------opening the service------------------"
-#        curl $(minikube service bb-entrypoint --url)  
     - name: Required info
+      id: info
       run: |
          echo -e "\nTime to up : $(($(date '+%s')-${{steps.time_s.outputs.time_s}})) seconds\n" 
          echo -e "\n$(kubectl get node)" 
