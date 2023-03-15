@@ -5,9 +5,6 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.info.outputs.info }}
-      output2: ${{ steps.time_s.outputs.time_s}}
     name: build example and deploy to minikube
     steps:
     - uses: actions/checkout@v2
