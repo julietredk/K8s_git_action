@@ -19,8 +19,8 @@ jobs:
         kubectl apply -f deployment.yaml 
     - name: Required info
       run: |
-         echo -e "\n$(kubectl get node)" > logfile.log
-         echo -e "\n$(kubectl version --short)\n" > logfile.log
+         echo -e "\n$(kubectl get node)" 
+         echo -e "\n$(kubectl version --short)\n" 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
