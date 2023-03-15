@@ -5,6 +5,9 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.info.outputs.info }}
+      output2: ${{ steps.time_s.outputs.time_s}}
     name: build example and deploy to minikube
     steps:
     - uses: actions/checkout@v2
@@ -25,7 +28,7 @@ jobs:
     - name: Required info
       id: info
       run: |
-         echo -e "\nTime to up : $(($(date '+%s')-${{steps.time_s.outputs.time_s}})) seconds\n" 
-         echo -e "\n$(kubectl get node)" 
-         echo -e "\n$(kubectl version --short)\n" 
+         echo -e "\nTime to up : $(($(date '+%s')-${{steps.time_s.outputs.time_s}})) seconds\n" >> $GITHUB_OUTPUT
+         echo -e "\n$(kubectl get node)" >> $GITHUB_OUTPUT
+         echo -e "\n$(kubectl version --short)\n"  >> $GITHUB_OUTPUT
  
