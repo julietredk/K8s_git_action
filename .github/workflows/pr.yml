@@ -25,6 +25,6 @@ jobs:
     - name: Test service URLs
       run: |
         minikube service list
-        minikube service example --url
+        minikube service bb-entrypoint --url
         echo "------------------opening the service------------------"
         curl $(minikube service example --url)        
