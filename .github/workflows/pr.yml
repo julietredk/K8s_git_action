@@ -25,7 +25,6 @@ jobs:
     - name: Required info
       id: info
       run: |
-         echo -e "\nTime to up : $(($(date '+%s')-${{steps.time_s.outputs.time_s}})) seconds\n" >> $GITHUB_OUTPUT
-         echo -e "\n$(kubectl get node)" >> $GITHUB_OUTPUT
-         echo -e "\n$(kubectl version --short)\n"  >> $GITHUB_OUTPUT
+         echo -e "\n$(kubectl get node)" 
+         echo -e "\n$(kubectl version --short)\n"  
  
